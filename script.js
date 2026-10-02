@@ -1,5 +1,25 @@
 document.documentElement.classList.add("js");
 
+const languageScrollKey = "ichnya-language-scroll";
+document.querySelectorAll("a[hreflang]").forEach((link) => {
+  link.addEventListener("click", () => {
+    sessionStorage.setItem(languageScrollKey, String(window.scrollY));
+  });
+});
+
+const savedLanguageScroll = sessionStorage.getItem(languageScrollKey);
+if (savedLanguageScroll !== null) {
+  sessionStorage.removeItem(languageScrollKey);
+  window.addEventListener("load", () => {
+    window.setTimeout(() => {
+      const scrollBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = "auto";
+      window.scrollTo(0, Number(savedLanguageScroll));
+      document.documentElement.style.scrollBehavior = scrollBehavior;
+    }, 0);
+  }, { once: true });
+}
+
 const header = document.querySelector(".site-header");
 const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 12);
 updateHeader();
