@@ -1,18 +1,18 @@
-# Миколаївська церква в Ічні
+# St. Nicholas Church in Ichna
 
-Статична односторінкова презентація парафії. Працює без збирача та сторонніх бібліотек; `index.html` можна відкрити напряму або розмістити файли на будь-якому статичному хостингу.
+A static, single-page presentation of the parish. It runs without a build tool or third-party libraries; you can open `index.html` directly or host the files on any static hosting service.
 
-## Фотографії
+## Photos
 
-Папки для підготовлених зображень: `images/hero/`, `images/history/`, `images/archive/`, `images/revival/` та `images/gallery/`. Зараз замість фото показані візуально узгоджені заповнювачі, щоб сторінка працювала без відсутніх файлів та сторонніх зображень.
+Folders for prepared images: `images/hero/`, `images/history/`, `images/archive/`, `images/revival/`, and `images/gallery/`. Visual placeholders are currently shown instead of photos so the page works without missing files or third-party images.
 
-Перед публікацією замініть заповнювачі у відповідних блоках `index.html` на `<picture>` або `<img>` із реальними фотографіями та змістовним українським `alt`. Рекомендовані файли — AVIF із WebP fallback. Для широких фотографій підготуйте варіанти приблизно 800, 1400 і 2000 px завширшки; для галереї достатньо ширини 900–1200 px. Стискайте зображення без помітної втрати деталей і задавайте `width` та `height` для кожного `<img>`. Головне фото не слід відкладати (`loading="eager"`, за потреби `fetchpriority="high"`); для зображень нижче першого екрана використовуйте `loading="lazy"` та `decoding="async"`.
+Before publishing, replace the placeholders in the corresponding sections of `index.html` with `<picture>` or `<img>` elements containing real photos and meaningful Ukrainian `alt` text. AVIF files with a WebP fallback are recommended. For wide photos, prepare versions approximately 800, 1400, and 2000 px wide; 900–1200 px is sufficient for the gallery. Compress images without noticeable loss of detail, and set `width` and `height` on every `<img>`. Do not defer the main photo (`loading="eager"`; use `fetchpriority="high"` if needed). For images below the fold, use `loading="lazy"` and `decoding="async"`.
 
-## Перед production
+## Before Production
 
-- Замініть демонстраційний canonical URL `https://example.org/` на адресу опублікованого сайту.
-- Додайте справжні фотографії в позначені блоки; не залишайте стилізовані заповнювачі на фінальній сторінці.
-- Після додавання фото налаштуйте `srcset`/`sizes` і перевірте фактичні кропи на мобільному та великому екрані.
-- Перевірте зовнішні посилання, метадані та контраст після внесення фінальних матеріалів.
+- Replace the example canonical URL `https://example.org/` with the URL of the published site.
+- Add real photos to the marked sections; do not leave the stylized placeholders on the final page.
+- After adding photos, configure `srcset`/`sizes` and check the actual crops on mobile and large screens.
+- Review external links, metadata, and contrast after adding the final content.
 
-Жодні трекери, зовнішні скрипти чи шрифти не завантажуються.
+No trackers, external scripts, or fonts are loaded.
